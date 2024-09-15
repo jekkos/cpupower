@@ -82,13 +82,13 @@ export class CPUFreqBaseIndicator {
         this.arrowActive = this.settings.get_boolean("show-arrow-in-taskbar");
         this.hbox.remove_all_children();
         if (this.iconActive) {
-            this.hbox.add_actor(this.icon);
+            this.hbox.add_child(this.icon);
         }
         if (this.lblActive) {
-            this.hbox.add_actor(this.lbl);
+            this.hbox.add_child(this.lbl);
         }
         if (this.arrowActive) {
-            this.hbox.add_actor(this.arrow);
+            this.hbox.add_child(this.arrow);
         }
     }
 
@@ -99,11 +99,11 @@ export class CPUFreqBaseIndicator {
     }
 
     disable() {
-        this.actor.remove_actor(this.hbox);
+        this.actor.remove_child(this.hbox);
     }
 
     enable() {
-        this.actor.add_actor(this.hbox);
+        this.actor.add_child(this.hbox);
     }
 
     destroy() {
